@@ -1,0 +1,34 @@
+1- Adicione o autoload ao composer.json:
+
+    "autoload": {
+        "psr-4": {
+            "Buscador\\": "src/"
+        }
+    }
+
+    Obs: utilize a psr mais recomendada atualmente
+    
+    Obs: Nomeie o namespace raiz e indique o arquivo que o autoload saberá que Buscador/X deve procurar X dentro
+    de src/
+
+2- Atualize o composer 
+
+    O comando: composer dumpautoload serve para atualizar apenas o autoload (sem verificar todos os atributos)
+
+3- Montando o classmap
+
+    Ao adicionar um arquivo no atributo classmap do autoload, poderá ser chamado
+
+    "classmap": [
+        "functions/testeAutoload.php"
+    ],
+
+    Obs: Serve para chamar classes apenas
+
+4- Montando o files
+
+    Ao adicionar um arquivo no atributo files do autoload, poderá chamar suas funções
+
+    "files": [
+        "functions/functions.php"
+    ],

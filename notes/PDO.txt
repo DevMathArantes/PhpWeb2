@@ -1,0 +1,40 @@
+1- A classe PDO é criada da seguinte forma:
+
+    $x = new PDO(y,z,n);
+
+    x= variável que vai receber o objeto PDO
+
+    y= string de conexão (informa o drive utilizado)
+
+        Obs: estamos utilizando sqlite, portanto deve-se informar o caminho do banco de dados (absoluto)
+
+    z= usuário
+
+    n= senha
+
+2- O método $pdo->exec("...") serve para um objeto PDO executar um comando SQL recebido como string para 
+alterar dados
+
+3- O método $pdo->query("...") serve para um objeto PDO executar um comando SQL recebido como string para 
+retornar dados
+
+4- O método fetchAll() é responsável por obter todas as linhas restantes de um conjunto de resultados e 
+retorná-las como um array de arrays ou objetos (dependendo do modo de busca que você escolher).
+
+    Obs: este método pode receber um parâmetro que define como os dados serão retornados
+
+    4.1- PDO::FETCH_BOTH: retorna tanto um array indexado pelo nome da coluna quanto pelo índice começando 
+    por zero (padrão caso o método não receba parâmetro).
+
+    4.2- PDO::FETCH_ASSOC: retorna um array associativo cujo o índice é a coluna.
+
+5- O método fetch() do PDO é utilizado para buscar uma única linha de um conjunto de resultados de uma consulta 
+ao banco de dados. Em vez de retornar um array com todas as linhas (como o fetchAll()), ele retorna apenas uma 
+linha por vez, o que pode ser útil quando você precisa processar os resultados linha por linha ou quando você 
+sabe que a consulta retornará apenas uma linha (pode receber os mesmos parâmetros).
+
+    Obs: caso uma consulta possua varias linhas, usar o fetch em uma mesma consulta varias vezes fará com que 
+    ele retorne a primeira linha e a retire dos resultados. Quando passar por todas as linhas ele retornará false
+
+6- O método fetchColumn serve para mostrar o valor de uma coluna de um registro através de um parâmetro que define 
+a coluna (0 para a primeira, 1 para a segunda, etc...)

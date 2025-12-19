@@ -1,0 +1,2 @@
+1- Durante a criação do objeto PDO, caso o caminho do banco de dados não seja encontrado, um arquivo
+será criado com o nome informado

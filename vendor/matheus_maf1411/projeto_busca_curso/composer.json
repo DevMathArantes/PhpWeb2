@@ -1,0 +1,47 @@
+{
+    "name": "matheus_maf1411/projeto_busca_curso",
+    "description": "Projeto prático do curso de php para web da alura, tem por objetivo retornar o html da página de cursos da alura.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "math.arantes",
+            "email": "matheusoficial1411@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.10",
+        "symfony/dom-crawler": "^7.3",
+        "symfony/css-selector": "^7.3"
+    },
+    "autoload": {
+        "classmap": [
+            "functions/testeAutoload.php"
+        ],
+        "files": [
+            "functions/functions.php"
+        ],
+        "psr-4": {
+            "Buscador\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.4"
+    },
+    "scripts": {
+        "listar" : "composer list",
+        "atualizar" : "composer install",
+        "testarProjeto" : [
+            "@atualizar",
+            "php projeto.php"
+        ],
+        "post-update-cmd": [
+            "@testarProjeto"
+        ]
+    },
+    "scripts-descriptions": {
+        "listar" : "Lista todos os comandos do composer",
+        "atualizar" : "Atualiza as dependências do projeto",
+        "testarProjeto" : "Atualiza as dependências e executa o projeto"
+    },
+    "license": "GPL-3.0"
+}

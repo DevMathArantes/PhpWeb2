@@ -1,0 +1,56 @@
+1- O que é o composer ?
+
+    É de forma resumida um gerenciador de dependências 
+
+    Obs: Acesse o site https://getcomposer.org e vá para a página do Download, baixe o Instalador 
+    (Composer-Setup.exe) e execute o instalador. Para testar se funciou, abra o prompt de comandos e digite:
+    composer --version
+
+2- Usando o composer
+
+    2.1- Use o comando "composer init" no terminal para iniciar
+    2.2- Conforme será pedido, informe no seguinte formato: X/Y (X = autor do projeto, Y = nome do projeto)
+    2.3- Conforme será pedido, informe uma descrição do projeto
+    2.4- Confirme o autor com seu nome de git-hub
+    2.5- Dê apenas enter para p Minimum Stability (não precisa ser configurado agora)
+    2.6- Informe o tipo de projeto conforme pedido (neste exemplo é uma library)
+        2.6.1- project = aplicação completa
+        2.6.2- library = apenas uma biblioteca (padrão caso não seja informado)
+        2.6.3- metapackage = projeto vazio com dependências que serão necessárias para o projeto
+        2.6.4- composer-plugin = forma de criar plugins para o composer
+    2.7- Informe uma licença de código ou dê enter para pular (não obrigatório)
+    2.8- Informe as dependências ou dê enter para pular (não obrigatório)
+    2.9- Enter novamente
+    2.10- Digite no para não gerar dependências de desenvolvimento
+    2.11- Digite enter
+    2.12- Digite enter para gerar o arquivo
+
+3- Onde o composer busca os pacotes ?
+
+    Acesse: https://packagist.org/
+
+    Obs: é o repostirório principal mas não o único
+
+4- Atualizando o composer manualmente
+
+    Caso você adicione algo manualmente no composer.json, utilize o comando: composer install para atualizar
+
+5- Listar todos os comandos possiveis do composer
+
+    composer list
+
+6- Adicionando ao require dev:
+
+    composer require --dev X
+
+    Obs: o pacote X será baixado como ferramente de desenvolvimento e será atribuida ao:
+
+    "require-dev": {
+
+    }
+
+7- Instalando dependências em ambiente de produção:
+
+    composer install --no-dev
+
+    Obs: todas as dependências serão baixadas, exceto as ferramentas de desenvolvimento presentes no require dev

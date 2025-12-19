@@ -1,0 +1,37 @@
+{
+    "name": "matheus_dev_php_web2/projeto_curso_php_web_2",
+    "description": "Projeto prático do segundo curso da formação de php para web da alura",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MD\\": "models/",
+            "IN\\": "interfaces/"
+        }
+    },
+    "authors": [
+        {
+            "name": "math.arantes",
+            "email": "matheusoficial1411@gmail.com"
+        }
+    ],
+    "require": {
+        "matheus_maf1411/projeto_busca_curso": "dev-master"
+    },
+    "scripts": {
+        "testesAlunos" : [
+            "composer update",
+            "php testesAlunos/create.php",
+            "php testesAlunos/insert.php",
+            "php testesAlunos/select.php",
+            "php testesAlunos/delete.php"
+        ],
+        "roda" : [
+            "php projeto.php"
+        ]          
+    },
+    "scripts-descriptions": {
+        "test" : "Executa o crud completo dos alunos",
+        "roda" : "Executa o projeto principal"
+    },
+    "license": "GPL-3.0"
+}

@@ -1,0 +1,17 @@
+* Não altere o composer.lock
+
+* O PHPUNIT serve para realizar testes 
+
+    Comando composer: composer require --dev phpunit/phpunit
+
+    Obs: ele deve ficar no dev por ser uma ferramenta de desenvolvimento
+* O PHPCS serve para verificar o padrão do código
+
+    Comando composer: composer require --dev squizlabs/php_codesniffer
+
+    Obs: ele deve ficar no dev por ser uma ferramenta de desenvolvimento
+* O Phan serve para achar erros no código
+
+    Comando composer: composer require --dev phan/phan
+
+    Obs: ele deve ficar no dev por ser uma ferramenta de desenvolvimento

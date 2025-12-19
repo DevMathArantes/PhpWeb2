@@ -1,0 +1,48 @@
+1- Para poder chamar namespaces de componentes do composer, utilize:
+
+    require "vendor/autoload.php";
+    
+    use Symfony\Component\DomCrawler\Crawler;
+
+2- Para criar um objeto cliente do guzzle, utilize: 
+    
+    $cliente = new Client(['base_uri' => 'https://www.alura.com.br/']);
+
+    Obs: precisa de "use GuzzleHttp\Client;"
+    Obs: o parâmetro 'base_uri'=>'X' não obrigatório faz com que todas as requisições deste cliente comecem com X
+
+3- Utilize esta função para o objeto cliente fazer uma requisição: 
+
+    $x = $cliente->request('GET', 'y');
+
+    Requisição $x feita no método GET para o link 'y'
+
+4- Para coletar o html de uma requisição: 
+
+    $html = $resposta->getBody();
+
+5- Criando um objeto da classe crawler
+
+    $crawler = new Crawler();
+
+6- Adicionando html ao crawler
+
+    $crawler->addHtmlContent($html);
+
+7- Filtrando tags "span" da classe "card-curso__nome" e salvando no array $cursos
+
+    $cursos = $crawler->filter('span.card-curso__nome');
+
+8- percorrendo o array $cursos e chamando cada elemento html de $curso
+
+    foreach ($cursos as $curso) {
+
+        8.1- Coletando o texto puro das tags com a função textContent
+
+        echo $curso->textContent . PHP_EOL;
+
+        Obs: PHP_EOL: É uma constante predefinida do PHP que significa "End Of Line" (Fim de Linha). Ela insere 
+        o caractere de quebra de linha apropriado para o sistema operacional onde o script está sendo executado 
+        (por exemplo, \n no Linux/macOS ou \r\n no Windows).
+    
+    }

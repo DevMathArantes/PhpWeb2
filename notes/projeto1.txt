@@ -1,0 +1,4 @@
+O pacote do projeto 1 foi requisitado com o comando:
+
+composer require matheus_maf1411/projeto_busca_curso
+Obs: agora a classe Buscador pode ser usada

@@ -1,0 +1,11 @@
+1- Documentação: https://phpunit.de/getting-started/phpunit-8.html
+
+2- O PHPUnit é uma ferramenta poderosa para testes em PHP, comumente utilizada para testes unitários, 
+mas que também oferece recursos para realizar outros tipos de testes.
+
+3- Comando composer para baixar: composer require --dev phpunit/phpunit
+
+    Obs: por se tratar de uma ferramenta de desenvolvimento, é recomendado que ele seja baixado com o 
+    parâmetro --dev para separa-lo das dependências de funcionamento do projeto
+
+4- Verifique a instalação com o comando: ./vendor/bin/phpunit --version no terminal

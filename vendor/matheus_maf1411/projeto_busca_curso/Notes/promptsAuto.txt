@@ -1,0 +1,46 @@
+1- Adicione o atributo "scripts" no composer.json:  
+
+    "scripts" : {
+        
+    }
+
+2- Para adicionar um prompt, adicione em scripts:
+
+    "X" : "Y"
+
+    Ao chamar por composer X, o prompt Y será executado
+
+3- Executando mais de um comando:
+
+    "X" : [
+        "Y1",
+        "Y2",
+        "Y3",
+        "Yn"
+    ]
+
+4- Referenciando scripts definidos:
+
+    @X (X é um script definido anteriormente)
+
+5- Na lista de comandos composer você confere as descrições de cada script, para adicionar descrições aos 
+scripts personalidos, adicione o scripts-descriptions no composer.json:
+
+    "scripts-descriptions": {
+        "X" : "Y"
+    }
+
+    O script X recebeu a descrição Y
+
+6- Para adicionar algo a comandos já existentes:
+
+    6.1- Acesse: https://getcomposer.org/doc/articles/scripts.md
+    6.2- Encontre o comando desejado
+    6.3- Dentro de scripts, chame o nome do comando e em formato de lista, adicione comandos a ele
+    6.4- Exemplo:
+
+        "post-update-cmd": [
+            "@X"
+        ]
+
+        Obs: O comando composer update executa o script X no final de sua execução

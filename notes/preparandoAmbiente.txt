@@ -1,0 +1,8 @@
+1- Abra o php.ini (pode encontrar o caminho com o comando: php --ini)
+
+    Descomente as seguintes linhas: 
+
+    1.1- ;extension=pdo_sqlite 
+    1.2- ;extension_dir=ext
+
+    Obs: tenha o composer e o php já instalados

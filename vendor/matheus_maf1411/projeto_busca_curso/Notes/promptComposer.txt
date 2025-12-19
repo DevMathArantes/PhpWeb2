@@ -1,0 +1,12 @@
+1- composer require X
+
+    Serve para o composer instalar o componente XML
+
+2- composer install
+
+    O composer instala tudo o que estiver no composer.json
+
+3- composer update
+
+    O composer atualiza todos os componentes para a versão mais atualizada
+    

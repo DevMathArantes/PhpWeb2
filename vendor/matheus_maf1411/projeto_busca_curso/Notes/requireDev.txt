@@ -1,0 +1,8 @@
+1- O campo require dev pode ser encontrado no composer.json como:
+
+    "require-dev": {
+
+    }
+
+    Aqui ficam as ferramentas de desenvolvimento que não devem ser instaladas em um ambiente de produção (como o 
+    php unit que serve para testes)

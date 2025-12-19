@@ -1,0 +1,37 @@
+1- Acesse o site https://packagist.org/
+
+2- Procure pelos componentes: 
+
+    2.1: guzzlehttp/guzzle 
+
+        O Guzzle é um cliente HTTP para PHP.
+
+        Em termos simples, ele serve para fazer com que sua aplicação PHP consiga falar (enviar requisições) e 
+        escutar (receber respostas) de outros servidores e serviços na internet.
+
+        Comando no terminal para instalar: composer require guzzlehttp/guzzle
+
+    2.2: symfony/dom-crawler
+
+        O Symfony DomCrawler é uma biblioteca PHP extremamente útil para navegar e extrair dados de documentos 
+        HTML e XML.
+
+        Comando no terminal para instalar: composer require symfony/dom-crawler
+
+    2.3: symfony/css-selector
+
+        Converte seletores CSS em expressões XPath
+
+        XPath é a linguagem nativa usada para consultar elementos em documentos XML e HTML no PHP (por exemplo, 
+        com as classes DOMXPath ou SimpleXMLElement). No entanto, seletores CSS (como os usados no JavaScript, 
+        jQuery ou em folhas de estilo) são frequentemente mais familiares e fáceis de escrever para muitos 
+        desenvolvedores.
+
+3- Atualizando componentes
+
+    Utilize o comando: composer update para atualizar todos os componentes
+
+4- Postando o projeto no packagist:
+
+    No site do packgist vá em submit, preencha o campo com o link do repositório git do pacote, após isso confirme o
+    pacote, após isso estará pronto.
