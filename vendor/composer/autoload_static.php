@@ -33,6 +33,10 @@ class ComposerStaticInit3b5ffebc1e71e592ed7fa8d60d29f24a
             'Masterminds\\' => 12,
             'MD\\' => 3,
         ),
+        'I' => 
+        array (
+            'IN\\' => 3,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -78,6 +82,10 @@ class ComposerStaticInit3b5ffebc1e71e592ed7fa8d60d29f24a
         'MD\\' => 
         array (
             0 => __DIR__ . '/../..' . '/models',
+        ),
+        'IN\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/interfaces',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
