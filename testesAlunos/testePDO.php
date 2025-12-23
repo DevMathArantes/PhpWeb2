@@ -9,9 +9,7 @@
 
     //Criando a tabela de testes
 
-    $banco = __DIR__ . "/../banco.sqlite";
-    $pdo = new PDO('sqlite:' . $banco);
-
+    $pdo = Conexao::criarConexao();
     $pdoAluno = new EstudantePDO($pdo);
 
     $pdo->exec('CREATE TABLE estudantes (
