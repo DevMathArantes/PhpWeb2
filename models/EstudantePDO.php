@@ -100,7 +100,7 @@
 
             $alunos = [];
 
-            while($registro = $statement->fetch(PDO::FETCH_ASSOC)){
+            while($registro = $statement->fetch()){
                 $aluno = new Estudante(
                     $registro['id'],
                     $registro['nome'],

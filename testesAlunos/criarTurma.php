@@ -13,26 +13,22 @@
     
     $conexao->beginTransaction();
 
-    $primeiro = new Estudante(
-        null,
-        "Testes de transação 1",
-        new \DateTimeImmutable("2003-11-14")
-    );   
-    if(!$pdo->salvarAluno($primeiro)){
+    try{
+
+        $primeiro = new Estudante(null, "Testes de transação 1", new \DateTimeImmutable("2003-11-14"));   
+        $pdo->salvarAluno($primeiro);
+        
+
+        $segundo = new Estudante(null, "Testes de transação 2", new \DateTimeImmutable("2003-11-14")); 
+        $pdo->salvarAluno($segundo);
+
+        $conexao->commit();
+        
+    } catch(\PDOException $erro){
+
+        echo $erro->getMessage();
         $conexao->rollBack();
+
     }
-    
-
-    $segundo = new Estudante(
-        null,
-        "Testes de transação 2",
-        new \DateTimeImmutable("2003-11-14")
-    ); 
-    if(!$pdo->salvarAluno($segundo)){
-        $conexao->rollBack();
-    }
-
-    $conexao->commit();
-
 
     
