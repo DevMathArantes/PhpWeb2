@@ -8,6 +8,9 @@
         private string $nome;
         private \DateTimeImmutable $data_nascimento;
 
+        /** @var Telefone[] */
+        private array $telefones = [];
+
         public function __construct(?int $id, string $nome, \DateTimeImmutable $data_nascimento)
         {
             $this->id = $id;
@@ -50,4 +53,18 @@
         public function idade(): int{
             return $this->data_nascimento->diff(new \DateTimeImmutable())->y;
         }
+
+        //Adiciona telefones ao aluno
+        public function addTelefone(Telefone $telefone) : void {
+            $this->telefones[] = $telefone;
+        }
+
+        //Mostra os telefones do estudante
+        /** @return Telefone[] */
+        public function verTelefones() : array{
+
+            return $this->telefones;
+
+        }
+
     }
