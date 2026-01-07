@@ -10,6 +10,7 @@
         public function listarAlunos(): array;
         public function aniversariantes(\DateTimeInterface $data) : array;
         public function salvarAluno(Estudante $estudante) : bool;
-        public function removerAluno(int $id) : bool;        
+        public function removerAluno(int $id) : bool;      
+        public function alunosComTelefone() : array;  
 
     }

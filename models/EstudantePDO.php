@@ -5,12 +5,14 @@
     use IN\EstudanteRep;
     use MD\Conexao;
     use MD\Estudante;
+    use MD\Telefone;
     use PDO;
 
     class EstudantePDO implements EstudanteRep{
 
         private PDO $conexao;
 
+        //Função construtora
         public function __construct(PDO $conectar){
             $this->conexao = $conectar;
         }
@@ -96,22 +98,57 @@
 
         }
 
-        public function hidratarAluno(\PDOStatement $statement){
+        //Retorna a lista de alunos como objetos
+        public function hidratarAluno(\PDOStatement $statement) : array{
 
             $alunos = [];
 
             while($registro = $statement->fetch()){
-                $aluno = new Estudante(
+                $alunos[] = new Estudante(
                     $registro['id'],
                     $registro['nome'],
                     new \DateTimeImmutable($registro['data_nascimento'])
                 );
 
-                $alunos[]= $aluno;
             }
 
             return $alunos;
 
+        }
+
+        //Retorna um array com alunos que possuem telefone
+        public function alunosComTelefone() : array {
+            
+            $sql = 'SELECT estudantes.id,
+                                estudantes.nome,
+                                estudantes.data_nascimento,
+                                telefones.id AS telefone_id,
+                                telefones.ddd,
+                                telefones.numero
+                        FROM estudantes
+                        JOIN telefones ON estudantes.id = telefones.id_estudante;';
+
+            $statement = $this->conexao->query($sql);
+            $resultado = $statement->fetchAll();
+            $listaEstudantes = [];
+
+            foreach ($resultado as $registro) {
+
+                //Verifica se o array ja possui este id (aluno)
+                if(!array_key_exists($registro['id'], $listaEstudantes)){
+                    $listaEstudantes[$registro['id']] = new Estudante(
+                        $registro['id'],
+                        $registro['nome'],
+                        new \DateTimeImmutable($registro['data_nascimento'])
+                    );
+                }
+
+                $telefone = new Telefone($registro['telefone_id'], $registro['ddd'], $registro['numero']);
+                $listaEstudantes[$registro['id']]->addTelefone($telefone);
+
+            }
+
+            return $listaEstudantes;
         }
 
     }

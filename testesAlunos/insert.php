@@ -21,3 +21,10 @@
     novoAluno("Luna", new \DateTimeImmutable("2003-11-10"), $pdo);
 
     echo "\nAlunos inseridos com sucesso.";
+
+    $pdo->exec("INSERT INTO telefones (
+        ddd,
+        numero,
+        id_estudante
+    ) VALUES ('34', '999999999', 2), ('16', '000000000', 2), ('16', '111111111', 3)
+    ");

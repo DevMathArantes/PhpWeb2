@@ -2,6 +2,8 @@
 
     namespace MD;
 
+    use MD\Telefone;
+
     class Estudante{
 
         private ? int $id;

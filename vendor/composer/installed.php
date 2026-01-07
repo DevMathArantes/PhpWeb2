@@ -3,7 +3,7 @@
         'name' => 'matheus_dev_php_web2/projeto_curso_php_web_2',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '1a13a760768cee24e6316ee46159ee524886bf5c',
+        'reference' => 'd4c08b07ebc03e18d44be0601e24145d6c1860e4',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -49,7 +49,7 @@
         'matheus_dev_php_web2/projeto_curso_php_web_2' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '1a13a760768cee24e6316ee46159ee524886bf5c',
+            'reference' => 'd4c08b07ebc03e18d44be0601e24145d6c1860e4',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

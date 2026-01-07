@@ -15,5 +15,8 @@
     echo "\nRegistros da tabela estudante excluídos.";
 
     //Criar a tabela estudantes 
-    $pdo->exec('DROP TABLE estudantes;');
-    echo "\nTabela estudantes foi excluida.";
+    $pdo->exec(
+        'DROP TABLE estudantes;
+        DROP TABLE telefones;'
+    );
+    echo "\nTabelas excluidas.";
